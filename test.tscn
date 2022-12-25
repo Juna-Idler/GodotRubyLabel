@@ -1,0 +1,89 @@
+[gd_scene load_steps=5 format=2]
+
+[ext_resource path="res://addons/ruby_label/ruby_label.gd" type="Script" id=1]
+[ext_resource path="res://base_font.tres" type="DynamicFont" id=2]
+[ext_resource path="res://ruby_font.tres" type="DynamicFont" id=3]
+[ext_resource path="res://test.gd" type="Script" id=4]
+
+[node name="Control" type="Control"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+script = ExtResource( 4 )
+
+[node name="RubyLabel" type="Control" parent="."]
+anchor_right = 1.0
+anchor_bottom = 1.0
+script = ExtResource( 1 )
+font_font = ExtResource( 2 )
+font_ruby_font = ExtResource( 3 )
+font_color = Color( 1, 1, 1, 1 )
+font_outline_color = Color( 0, 0, 0, 1 )
+ruby_alignment_ruby = 1
+ruby_alignment_parent = 0
+buffer_left_margin = 0
+buffer_right_margin = 0
+buffer_left_padding = 4
+buffer_right_padding = 4
+buffer_visible_border = false
+adjust_line_height = 0
+adjust_ruby_distance = -4
+adjust_no_ruby_space = 0
+text_input = "これは｜Godot《ゴドー》でルビ（｜振《ふ》り｜仮名《がな》）を｜表示《ひょうじ》する｜Label《ラベル》っぽい｜Control《コントロール》です。
+EditorPluginでカスタムノードとして｜使《つか》えるようにしていますが、｜Control《コントロール》｜継承《けいしょう》ノードに｜直接《ちょくせつ》\"ruby_label.gd\"をアタッチすることも｜出来《でき》ます。
+｜文字《もじ》が｜表示《ひょうじ》されない｜場合《ばあい》は、｜Font《フォント》の｜設定《せってい》、｜Display《ディスプレイ》の｜Rate《レート》が100なのかを｜確認《かくにん》して、それでも｜表示《ひょうじ》されない｜場合《ばあい》はプロジェクトをリロードしてください。
+ルビ｜指定《してい》はデフォルトで｜青空文庫《あおぞらぶんこ》に｜倣《なら》った｜記号《きごう》を｜用《もち》いています。（｜親文字《おやもじ》｜指定《してい》の｜記号《きごう》は｜省略《しょうりゃく》｜出来《でき》ません（そして｜現状《げんじょう》ルビ｜指定《してい》｜記号《きごう》をエスケープして｜表示《ひょうじ》する｜方法《ほうほう》もありません））。
+InputのRubyParent,RubyBegin,RubyEndでルビ｜指定《してい》｜記号《きごう》を｜変更《へんこう》｜出来《でき》ます。スクリプトからルビを｜検出《けんしゅつ》する｜正規表現《せいきひょうげん》を｜直接《ちょくせつ》｜設定《せってい》することも｜出来《でき》ます。"
+text_ruby_parent = "｜"
+text_ruby_begin = "《"
+text_ruby_end = "》"
+display_horizontal_alignment = 0
+display_vertical_alignment = 0
+display_rate = 100.0
+display_rate_phonetic = false
+output_base_text = "これはGodotでルビ（振り仮名）を表示するLabelっぽいControlです。
+EditorPluginでカスタムノードとして使えるようにしていますが、Control継承ノードに直接\"ruby_label.gd\"をアタッチすることも出来ます。
+文字が表示されない場合は、Fontの設定、DisplayのRateが100なのかを確認して、それでも表示されない場合はプロジェクトをリロードしてください。
+ルビ指定はデフォルトで青空文庫に倣った記号を用いています。（親文字指定の記号は省略出来ません（そして現状ルビ指定記号をエスケープして表示する方法もありません））。
+InputのRubyParent,RubyBegin,RubyEndでルビ指定記号を変更出来ます。スクリプトからルビを検出する正規表現を直接設定することも出来ます。"
+output_phonetic_text = "これはゴドーでルビ（ふりがな）をひょうじするラベルっぽいコントロールです。
+EditorPluginでカスタムノードとしてつかえるようにしていますが、コントロールけいしょうノードにちょくせつ\"ruby_label.gd\"をアタッチすることもできます。
+もじがひょうじされないばあいは、フォントのせってい、ディスプレイのレートが100なのかをかくにんして、それでもひょうじされないばあいはプロジェクトをリロードしてください。
+ルビしていはデフォルトであおぞらぶんこにならったきごうをもちいています。（おやもじしていのきごうはしょうりゃくできません（そしてげんじょうルビしていきごうをエスケープしてひょうじするほうほうもありません））。
+InputのRubyParent,RubyBegin,RubyEndでルビしていきごうをへんこうできます。スクリプトからルビをけんしゅつするせいきひょうげんをちょくせつせっていすることもできます。"
+clip_rect = false
+auto_fit_height = false
+
+[node name="Button" type="Button" parent="RubyLabel"]
+margin_left = 760.0
+margin_top = 528.0
+margin_right = 1016.0
+margin_bottom = 592.0
+script = ExtResource( 1 )
+font_font = ExtResource( 2 )
+font_ruby_font = ExtResource( 3 )
+font_color = Color( 1, 1, 1, 1 )
+font_outline_color = Color( 0, 0, 0, 1 )
+ruby_alignment_ruby = 0
+ruby_alignment_parent = 0
+buffer_left_margin = 0
+buffer_right_margin = 0
+buffer_left_padding = 0
+buffer_right_padding = 0
+buffer_visible_border = false
+adjust_line_height = 0
+adjust_ruby_distance = 0
+adjust_no_ruby_space = 0
+text_input = "｜文字《もじ》｜送《おく》り"
+text_ruby_parent = "｜"
+text_ruby_begin = "《"
+text_ruby_end = "》"
+display_horizontal_alignment = 1
+display_vertical_alignment = 1
+display_rate = 100.0
+display_rate_phonetic = false
+output_base_text = "文字送り"
+output_phonetic_text = "もじおくり"
+clip_rect = false
+auto_fit_height = false
+
+[connection signal="pressed" from="RubyLabel/Button" to="." method="_on_Button_pressed"]
