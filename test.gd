@@ -15,10 +15,15 @@ func _ready():
 #func _process(delta):
 #	pass
 
+var tween : SceneTreeTween
 
 func _on_Button_pressed():
+	if tween and tween.is_running():
+		tween.stop()
+		$RubyLabel.display_rate = 100
+		return
 	$RubyLabel.display_rate = 0
 	var length = $RubyLabel.output_phonetic_text.length()
-	var tween = create_tween()
+	tween = create_tween()
 	tween.tween_property($RubyLabel,"display_rate",100,length * 0.05)
 	pass # Replace with function body.
